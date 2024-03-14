@@ -9,9 +9,30 @@ let userNumber = parseInt(prompt('Inserisci un numero'));
 
 let randomNumber = getRndInteger (1, 5);
     console.log(randomNumber);
+let sum = randomNumber + userNumber;
+let EvenOrOddResult = isEvenOrOdd(sum);
+alert(sum + ' ' +EvenOrOddResult);
+
+let outputMessage;
+if(userSelection === 'pari' && EvenOrOddResult === 'è uscito Pari' || userSelection === 'dispari' && EvenOrOddResult === "è uscito Dispari!"){
+    outputMessage = 'Hai vinto!'
+} else {
+    outputMessage = 'Hai perso!'
+}
+alert(outputMessage);
 
 
 //functions
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
+function isEvenOrOdd (sumDone, result){
+    if (sumDone % 2 === 0){
+        result = "è uscito Pari!";
+    } else {
+        result = "è uscito Dispari!";
+    }
+    return result;
+
 }
