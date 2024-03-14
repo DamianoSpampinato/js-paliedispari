@@ -1,37 +1,16 @@
-//registro email
-const emailRegistry = ['example1@email.com', 'example2@email.com', 'mariourbani@gmail.com'];
-console.log(emailRegistry);
-const newDiv = document.createElement('div')
-let outputMessage;
+//Chiedere all’utente di inserire una parola
+//Creare una funzione per capire se la parola inserita è palindroma
+//Su internet ci sono soluzioni con join e reverse, non potete usarle!
+let userWord = prompt('inserisci una parola');
+let wordbackwards = makeWordReverse(userWord);
+console.log(wordbackwards);
 
-//button funzion
-const summitButton = document.querySelector('#summit');
-summitButton.addEventListener('click', function(){
-    let emailFound = false;
-    //chidere email utente
-    let userEmail = document.querySelector('#user-email').value;
-    // controllare se è presente nel registro
-    for(let i = 0; i < emailRegistry.length; i++) {
-        const thisEmail = emailRegistry[i];
-        
-        //se trovo l'email la salvo
-        if(thisEmail === userEmail){
-            emailFound = true;
-        }
-        if(emailFound === true) {
-            let outputMessage = 'Attendi! log- in incorso';
-            
-            newDiv.innerHTML = (outputMessage);
-        } else {
-            let outputMessage = 'Utente non registrato! Signuppa';
-            newDiv.innerHTML = (outputMessage);
-          
+
+function makeWordReverse(word){
+    let wordReverse = '';
+    for(let i = word.length - 1; i >= 0; i--){
+        let thisLetter = word[i];
+        wordReverse += thisLetter;
     }
-    
-    
-    }
-})
-
-document.querySelector('#container').append(newDiv)
-
-//stampare messaggio appropriato
+    return wordReverse;
+}
