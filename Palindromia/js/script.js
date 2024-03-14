@@ -4,7 +4,11 @@
 let userWord = prompt('inserisci una parola');
 let wordbackwards = makeWordReverse(userWord);
 console.log(wordbackwards);
-
+if(userWord === wordbackwards){
+    alert('è un palindromo');
+} else{
+    alert('non è un palindromo');
+}
 
 function makeWordReverse(word){
     let wordReverse = '';
