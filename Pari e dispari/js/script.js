@@ -5,12 +5,13 @@
 //Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 //Dichiariamo chi ha vinto.
 const userSelection = prompt('Scegli pari o dispari');
+let userNumber = parseInt(prompt('Inserisci un numero'));
+
+let randomNumber = getRndInteger (1, 5);
+    console.log(randomNumber);
 
 
-
-
-
-//function
+//functions
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
